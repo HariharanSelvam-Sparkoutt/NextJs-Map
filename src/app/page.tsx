@@ -3,6 +3,8 @@
 import React from "react";
 import "leaflet/dist/leaflet.css";
 import { useRouter } from "next/navigation";
+import "./globals.css";
+import { sayHello, increment, decrement } from "hello-say";
 
 export default function Home() {
   const router = useRouter();
@@ -26,6 +28,24 @@ export default function Home() {
         }}
       >
         Google map
+      </button>
+      <button
+        className="mb-4 p-2 bg-blue-500 text-white rounded"
+        onClick={() => sayHello("Hello from Next.js!")}
+      >
+        Say Hello
+      </button>
+      <button
+        className="mb-4 p-2 bg-blue-500 text-white rounded"
+        onClick={() => console.log(increment(1))}
+      >
+        Increment
+      </button>
+      <button
+        className="mb-4 p-2 bg-blue-500 text-white rounded"
+        onClick={() => console.log(decrement(1))}
+      >
+        Decrement
       </button>
     </div>
   );
